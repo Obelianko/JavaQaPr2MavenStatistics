@@ -10,7 +10,6 @@ public class StatisticsService {
     }
 
     public long calculateAverage(long[] sales) {
-        calculateSum(sales);
         long sumAvg = calculateSum(sales);
         long avg = sumAvg / sales.length;
         return avg;
@@ -43,10 +42,10 @@ public class StatisticsService {
     }
 
     public long calculateLowAverageSales(long[] sales) {
-        calculateAverage(sales);
         long LowAvg = 0;
+        long Avg = calculateAverage(sales);
         for (long sale : sales) {
-            if (sale < calculateAverage(sales)) {
+            if (sale < Avg) {
                 LowAvg = LowAvg + 1;
             }
         }
@@ -54,10 +53,10 @@ public class StatisticsService {
     }
 
     public long calculateUpAverageSales(long[] sales) {
-        calculateAverage(sales);
         long Up = 0;
+        long Avg = calculateAverage(sales);
         for (long sale : sales) {
-            if (sale > calculateAverage(sales)) {
+            if (sale > Avg) {
                 Up = Up + 1;
             }
         }
