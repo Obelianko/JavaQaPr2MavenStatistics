@@ -42,25 +42,25 @@ public class StatisticsService {
     }
 
     public long calculateLowAverageSales(long[] sales) {
-        long LowAvg = 0;
-        long Avg = calculateAverage(sales);
+        long lowAvg = 0;
+        long avg = calculateAverage(sales);
         for (long sale : sales) {
-            if (sale < Avg) {
-                LowAvg = LowAvg + 1;
+            if (sale < avg) {
+                lowAvg = lowAvg + 1;
             }
         }
-        return LowAvg;
+        return lowAvg;
     }
 
     public long calculateUpAverageSales(long[] sales) {
-        long Up = 0;
-        long Avg = calculateAverage(sales);
+        long up = 0;
+        long avg = calculateAverage(sales);
         for (long sale : sales) {
-            if (sale > Avg) {
-                Up = Up + 1;
+            if (sale > avg) {
+                up = up + 1;
             }
         }
-        return Up;
+        return up;
     }
 }
 
